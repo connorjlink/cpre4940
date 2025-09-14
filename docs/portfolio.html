@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Connor J. Link &mdash; Portfolio</title>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:image" content="https://connorjlink.com/res/logo.jpg">
+<meta name="description" content="Connor Link. Computer engineering student at Iowa State University. Dubuque, Iowa, United States. Interests incompilers, processor architecture, and graphics.">
+<style>
+	@media (prefers-color-scheme: dark) {
+		html {
+			background: rgb(40, 40, 40);
+		}
+	}
+</style>
+      <script type="module" crossorigin src="/assets/main-Hitiy10-.js"></script>
+      <link rel="stylesheet" crossorigin href="/assets/main-DdAFIHXI.css">
+      <link rel="stylesheet" crossorigin href="/assets/portfolio-BFhglfRG.css">
+    </head>
+
+    <body>
+
+        <header class="shadowed hstack">
+    <div class="logo-container">
+        <img src="/assets/logo-8xp2TcVU.jpg" alt="logo">
+        <a class="title" id="index-tab" href="./">Connor J. Link</a>
+    </div>
+    <div class="dummy"></div>
+    <button id="navbar-toggle">
+        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/>
+        </svg>
+    </button>
+</header>
+
+        <div id="page">
+
+        <nav class="shadowed">
+    <div class="nav-radio">
+        <input type="radio" name="nav" id="home-radio" onclick="navigate('./');" checked>
+        <label for="home-radio">Home</label>
+    </div>
+    <div class="nav-radio">
+        <input type="radio" name="nav" id="portfolio-radio" onclick="navigate('./portfolio');">
+        <label for="portfolio-radio">Projects</label>
+    </div>
+    <div class="nav-radio">
+        <input type="radio" name="nav" id="experience-radio" onclick="navigate('./experience');">
+        <label for="experience-radio">Experience</label>
+    </div>
+    <div class="nav-radio">
+        <input type="radio" name="nav" id="education-radio" onclick="navigate('./education');">
+        <label for="education-radio">Education</label>
+    </div>
+    <div class="nav-radio">
+        <input type="radio" name="nav" id="contact-radio" onclick="navigate('./contact');">
+        <label for="contact-radio">Contact</label>
+    </div>
+    <div class="nav-radio">
+        <input type="radio" name="nav" id="reflections-radio" onclick="navigate('./reflections');">
+        <label for="reflections-radio">Reflections</label>
+    </div>
+    <div class="nav-radio">
+        <input type="radio" name="nav" id="resume-radio" onclick="navigate('./resume');">
+        <label for="resume-radio">Résumé</label>
+    </div>
+</nav>    
+
+        <article>
+            
+            <div class="subitem shadowed">
+                <h1 id="haze">Haze</h1>
+                
+                <div class="nudge-up">
+                    <p>A bespoke, from-scratch, full-stack toolchain for my new processor architecture, <b><i>haze</i></b>.</p>
+                    <i><a href="https://github.com/connorjlink/haze">github.com/connorjlink/haze</a></i>
+                </div>
+
+                <div class="wrap-children">
+
+                    <div class="subitem shadowed halfpad-top">
+                        <h2>Compiler</h2>
+
+                        <div class="nudge-up">
+                            <p>Atop a custom recursive-descent parser, <b><i>compiler</i></b> implements my own <i>haze</i> compiled programming language with custom backends and linkers for both <i>haze</i> and x86_64 processors. </p>
+                        </div>
+
+                        <p>Displayed below are a sample program compilation input and output.</p>
+
+                        <div class="haze-images custom-code">
+
+                            <figure>
+                                <code>
+                                    <pre class="shadowed"><span class="preprocessor">.include</span> <span class="string">"std.hz"</span>
+
+<span class="keyword">function</span> <span class="keyword">byte</span> <span class="function">main</span>()
+{
+    <span class="keyword">asm</span>
+    {
+    <span class="preprocessor">.define</span> <span class="macro">TEST</span> = <span class="integer-literal">1</span>
+    <span class="preprocessor">.org</span> <span class="operator">&</span><span class="integer-literal">$8000</span>
+        <span class="function">copy</span> <span class="function-parameter">r0</span>, #<span class="macro">TEST</span>
+        <span class="function">copy</span> <span class="function-parameter">r1</span>, #<span class="macro">TEST</span>
+        <span class="function">iadd</span> <span class="function-parameter">r0</span>, <span class="function-parameter">r1</span> <span class="comment">; 1 + 1</span>
+    }
+
+    <span class="keyword">byte</span> <span class="local-variable">foo</span> = (<span class="integer-literal">2</span> <span class="operator">*</span> <span class="integer-literal">3</span>) <span class="operator">+</span> <span class="integer-literal">1</span>; <span class="comment">// 7</span>
+    <span class="control-keyword">return</span> <span class="local-variable">foo</span>;
+}
+
+
+</pre>
+                                </code>
+
+                                <figcaption>test.hz</figcaption>
+                            </figure>
+
+                            <figure>
+                                <code>
+                                    <pre class="shadowed"><span class="comment">; Generated by the <i>haze</i> optimizer</span>
+<span class="comment">; @ 8/14/2024 23:11:02</span>
+
+<span class="preprocessor">.org</span> <span class="operator">&</span><span class="integer-literal">$8000</span>
+
+<span class="label">main</span>:
+    <span class="function">copy</span> <span class="function-parameter">r0</span>, #<span class="integer-literal">7</span>
+    <span class="function">push</span> <span class="function-parameter">r0</span>
+    <span class="function">exit</span>
+
+
+
+
+
+
+
+
+
+</pre>
+                                </code>
+
+                                <figcaption>test.hzs</figcaption>
+                            </figure>
+
+                        </div>
+                    </div>
+
+                    <div class="subitem shadowed halfpad-top">
+                        <h2>Interpreter</h2>
+    
+                        <div class="nudge-up">
+                            <p>Sharing syntax with the <i>haze</i> compiler, <b><i>interpreter</i></b> can hook the <i>geo</i> runtime as an intepreted scripting language using custom MQTT-based IPC or execute freestanding.</p>
+                        </div>
+    
+                        <p>Shown below are both a standalone "unhook" and <i>geo</i>-interfacing script.</p>
+    
+                        <div class="haze-images custom-code">
+
+                            <figure>
+                                <code>
+                                    <pre class="shadowed"><span class="preprocessor">.include</span> <span class="string">"std.hzi"</span>
+
+<span class="preprocessor">.define</span> <span class="macro">A</span> = <span class="integer-literal">1</span>
+<span class="preprocessor">.define</span> <span class="macro">B</span> = <span class="integer-literal">2</span>
+<span class="preprocessor">.define</span> <span class="macro">C</span> = <span class="integer-literal">3</span>
+
+<span class="preprocessor">.macro</span> <span class="macro">MUL</span> = (<span class="identifier">x</span>, <span class="identifier">y</span>):
+{
+    [<span class="identifier">x</span>] <span class="operator">*</span> [<span class="identifier">y</span>]
+}
+
+<span class="keyword">function</span> <span class="keyword">nvr</span> <span class="function">main</span>()
+{
+    <span class="comment">// no MQTT hook install</span>
+    <span class="keyword">.unhook</span>
+    <span class="keyword">byte</span> <span class="local-variable">foo</span> = $<span class="macro">MUL</span>(<span class="macro">A</span>, <span class="macro">B</span>) <span class="operator">+</span> <span class="macro">C</span>;
+    <span class="keyword">print</span>(<span class="local-variable">foo</span> <span class="operator">*</span> <span class="integer-literal">2</span>); <span class="comment">// output: 10</span>
+}</pre>
+                                </code>
+                                <figcaption>unhook.hzi</figcaption>
+                            </figure>
+    
+                            <figure>
+                                <code>
+                                    <pre class="shadowed"><span class="preprocessor">.include</span> <span class="string">"std.hzi"</span>
+<span class="preprocessor">.define</span> <span class="macro">RANGE</span> = <span class="integer-literal">1</span>
+<span class="preprocessor">.macro</span> <span class="macro">X</span> = (<span class="identifier">a</span>):
+{
+    <span class="identifier">a</span>[<span class="integer-literal">0</span>]
+}
+
+<span class="keyword">intrinsic</span> <span class="global-variable">sky_color</span> = [<span class="integer-literal">.5</span>, <span class="integer-literal">.5</span>, <span class="integer-literal">.5</span>];
+<span class="keyword">intrinsic</span> <span class="global-variable">mouse_sensitivity</span> = <span class="integer-literal">50</span>;
+<span class="keyword">intrinsic</span> <span class="global-variable">fov</span> = <span class="integer-literal">90</span>;
+
+<span class="keyword">function</span> <span class="keyword">nvr</span> <span class="function">main</span>(<span class="keyword">float</span> <span class="function-parameter">&Delta;T</span>)
+{
+    <span class="control-keyword">if</span> ($<span class="macro">X</span>(<span class="global-variable">sky_color</span>) &lt; <span class="macro">RANGE</span>) 
+        $<span class="macro">X</span>(<span class="global-variable">sky_color</span>) <span class="operator">+=</span> <span class="function-parameter">&Delta;T</span>;
+    <span class="control-keyword">else if</span> ($<span class="macro">X</span>(<span class="global-variable">sky_color</span>) &gt; <span class="macro">RANGE</span>)
+        $<span class="macro">X</span>(<span class="global-variable">sky_color</span>) <span class="operator">-=</span> <span class="function-parameter">&Delta;T</span>;
+}</pre>
+                                </code>
+
+                                <figcaption>hook.hzi</figcaption>
+                            </figure>
+
+                        </div>
+                    </div>
+
+                </div>
+                
+                <div class="wrap-children halfpad-top">
+
+                    <div class="subitem shadowed ">
+                        <h2>Assembler</h2>
+    
+                        <div class="nudge-up">
+                            <p>Internally utilizing the powerful <i>haze</i> frontend, <b><i>assembler</i></b> transforms custom assembly language source code into <i>haze</i> machine code </p>
+                        </div>
+                    </div>
+    
+                    <div class="subitem shadowed">
+                        <h2>Emulator</h2>
+        
+                        <div class="nudge-up">
+                            <p>Simulating <i>haze</i> machine code program execution at several KHz, <b><i>emulator</i></b> eases smoke-testing with live data watches and on-the-fly disassembly.</p>
+                        </div>
+                    </div>
+
+                </div>
+                
+
+                <div class="subitem shadowed halfpad-top">
+                    <h2>Language Server</h2>
+    
+                    <div class="nudge-up">
+                        <p>A fully LSP-compliant language server implementation, <b><i>haze-ls</i></b> offers contextual autocomplete and custom syntax highlighting for the <i>haze</i> language in VSCode.</p>
+    
+                        <ul>
+                            <li><i><a href="https://github.com/connorjlink/haze-ls">github.com/connorjlink/haze-ls</a></i></li>
+                            <li><i><a href="https://marketplace.visualstudio.com/items?itemName=connorjlink.haze-ls">marketplace.visualstudio.com/items?itemName=connorjlink.haze-ls</a></i></li>
+                        </ul>
+    
+                        <figure class="single-image">
+                            <img src="/assets/vscode_ls-t3EHb5W-.jpg">
+                            <figcaption>HazeLS VSCode Extension</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="subitem shadowed pad-top">
+                <h1>Inspector</h1>
+
+                <div class="nudge-up">
+                    <p class="nudge-up">An efficiency-first MQTT traffic monitoring client, <b><i>inspector</i></b> offers robust send/receive capabilities and high-level automation in a user-friendly WPF-based window.</p>
+                    <i><a href="https://github.com/connorjlink/inspector">github.com/connorjlink/inspector</a></i>
+                </div>
+
+                <figure class="single-image">
+                    <img src="/assets/inspector-B3gG-ztb.jpg">
+                    <figcaption>Transmit Loopback</figcaption>
+                </figure>
+            </div>
+
+            <div class="subitem shadowed pad-top">
+                <h1 id="rendering">3-D Rendering</h1>
+
+                <div class="subitem shadowed halfpad-top">
+                    <h2>Voxelization</h2>
+
+                    <div class="nudge-up">
+                        <p>A modern-OpenGL&ndash;based voxel rendering program, <b><i>geo</i></b> utilizes geometry pre-generation, vertex batching, and indexed instancing for remarkable efficiency.</p>
+                        <i><a href="https://github.com/connorjlink/geo">github.com/connorjlink/geo</a></i>
+                    </div>
+                </div>
+
+                <div class="subitem shadowed halfpad-top">
+                    <h2>Ray Tracing</h2>
+
+                    <div class="nudge-up">
+                        <p>By simulating light rays with physically based materials, <b><i>raytracer</i></b> produces photorealistic scene renders with reflections, soft shadows, and global illumination.</p>
+                        <i><a href="https://github.com/connorjlink/raytracer">github.com/connorjlink/raytracer</a></i>
+                    </div>
+                </div>
+
+                <div class="subitem shadowed halfpad-top">
+                    <h2>Rasterization</h2>
+
+                    <div class="nudge-up">
+                        <p>Powered by a custom linear algebra library, <b><i>rasterizer</i></b> features frustum culling, depth buffering, and face-based shading to view arbitrary <i>.obj</i> models.</p>
+                        <i><a href="https://github.com/connorjlink/constexpr-linear-algebra-library">github.com/connorjlink/constexpr-linear-algebra-library</a></i>
+                    </div>
+                </div>
+                
+                
+                <p>&nbsp;</p>
+                <p>Depicted below are sample renders from all three programs.</p>
+
+                <div class="haze-images">
+                    <figure>
+                        <img src="/assets/geo-DnK9yMx4.jpg">
+                        <figcaption>Voxel Renderer</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="/assets/raytracer-BafvTjh6.jpg">
+                        <figcaption>Ray Tracer</figcaption>
+                    </figure>
+
+                    <figure>
+                        <img src="/assets/rasterizer-Cv8BDamo.jpg">
+                        <figcaption>Rasterizer</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            <div class="subitem shadowed pad-top">
+                <h1 id="cl8">CL8</h1>
+                <p class="nudge-up">An entirely custom software suite for my 8-bit processor architecture, <b><i>CL8</i></b>.</p>
+
+                <div class="subitem shadowed">
+                    <h2>Titanium</h2>
+
+                    <div class="nudge-up">
+                        <p>A novel programming language compiler designed for <i>CL8</i>, <b><i>Titanium</i></b> uses the GNU Flex/Bison lexer and parser generators to transform custom source code into flat <i>CL8</i> assembly.</p>
+                        <i><a href="https://github.com/connorjlink/compiler">github.com/connorjlink/compiler</a></i>
+                    </div>
+
+                    <p>Displayed below are a sample program compilation input and output.</p>
+
+                    <div class="haze-images custom-code single-image">
+
+                        <figure>
+                            <code>
+                                <pre class="shadowed"><span class="preprocessor">.macro</span> <span class="macro">BIT</span> = (<span class="identifier">a</span>):
+{
+    (<span class="integer-literal">1</span> <span class="operator">&lt;&lt;</span> [<span class="identifier">a</span>])
+}
+
+<span class="keyword">function byte val</span> <span class="function">test</span> = 
+    (<span class="keyword">byte val</span> <span class="function-parameter">a</span>,
+     <span class="keyword">byte val</span> <span class="function-parameter">b</span>,
+     <span class="keyword">byte val</span> <span class="function-parameter">c</span>)
+{
+    <span class="control-keyword">return</span> (<span class="function-parameter">a</span> <span class="operator">+</span> <span class="function-parameter">b</span>) <span class="operator">|</span> <span class="function-parameter">c</span>;
+}
+
+<span class="keyword">function byte val</span> <span class="function">main</span> = ()
+{
+    <span class="control-keyword">return</span> $<span class="macro">BIT</span>(<span class="integer-literal">2</span>);
+}
+
+</pre>
+                            </code>
+
+                            <figcaption>test.ti</figcaption>
+                        </figure>
+
+                        <figure>
+                            <code>
+                                <pre class="shadowed"><span class="keyword">.begin</span>
+<span class="preprocessor">.include</span> <span class="string">"def.s"</span>
+<span class="label">@function_start_test</span>:
+    <span class="function">ldb</span> <span class="function-parameter">r0</span>, %<span class="integer-literal">0</span>
+    <span class="function">ldb</span> <span class="function-parameter">r1</span>, %<span class="integer-literal">1</span>
+    <span class="function">adc</span> <span class="function-parameter">r0</span>, <span class="function-parameter">r1</span>
+    <span class="function">ldb</span> <span class="function-parameter">r1</span>, %<span class="integer-literal">2</span>
+    <span class="function">or</span> <span class="function-parameter">r0</span>, <span class="function-parameter">r1</span>
+    <span class="function">push</span> <span class="function-parameter">r0</span>
+<span class="label">@function_end_test</span>:
+    <span class="function">pop</span> <span class="function-parameter">IP</span>
+<span class="label">@function_start_main</span>:
+    <span class="function">ldb</span> <span class="function-parameter">r0</span>, #<span class="integer-literal">1</span>
+    <span class="function">rol</span> <span class="function-parameter">r0</span>, #<span class="integer-literal">2</span>
+    <span class="function">push</span> <span class="function-parameter">r0</span>
+<span class="label">@function_end_main</span>:
+    <span class="function">pop</span> <span class="function-parameter">IP</span>
+<span class="keyword">.end</span>
+</pre>
+                            </code>
+
+                            <figcaption>test.ti.s</figcaption>
+                        </figure>
+
+                    </div>
+                </div>
+
+                <div class="subitem shadowed halfpad-top">
+                    <h2>Microcode</h2>
+
+                    <div class="nudge-up">
+                        <p>Extensively utilizing the C++ preprocessor, <b><i>microcode</i></b> synthesizes and serializes the custom &mu;op sequences powering <i>CL8</i> instructions.</p>
+
+                        <i><a href="https://github.com/connorjlink/microcode">github.com/connorjlink/microcode</a></i>
+                    </div>
+                </div>
+
+                <div class="wrap-children halfpad-top">
+
+                    <div class="subitem shadowed">
+                        <h2>Assembler</h2>
+    
+                        <div class="nudge-up">
+                            <p>Based around a GNU Flex/Bison lexer and parser, <b><i>assembler</i></b> flattens custom assembly language source code into raw <i>CL8</i> machine.</p>
+                            <i><a href="https://github.com/connorjlink/assembler">github.com/connorjlink/assembler</a></i>
+                        </div>
+                    </div>
+    
+                    <div class="subitem shadowed">
+                        <h2>Disassembler</h2>
+    
+                        <div class="nudge-up">
+                            <p>A fully custom binary analysis program, <b><i>disassembler</i></b> expands <i>CL8</i> machine code back into human-readable assembly source for debugging.</p>
+                            <i><a href="https://github.com/connorjlink/disassembler">github.com/connorjlink/disassembler</a></i>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="wrap-children halfpad-top">
+
+                    <div class="subitem shadowed">
+                        <h2>Emulator</h2>
+    
+                        <div class="nudge-up">
+                            <p>Designed to painlessly debug <i>CL8</i> binaries, <b><i>emulator</i></b> offers a readable behavior-level simulation of the <i>CL8</i> architecture.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+                            <i><a href="https://github.com/connorjlink/emulator">github.com/connorjlink/emulator</a></i>
+                        </div>
+                    </div>
+    
+                    <div class="subitem shadowed">
+                        <h2>Hardware</h2>
+    
+                        <div class="nudge-up">
+                            <p>A register-transfer-level design, <b><i>hardware</i></b> implements the <i>CL8</i> architecture in SystemVerilog for ultra-precise simulation.</p>
+                            <i><a href="https://github.com/connorjlink/hardware">github.com/connorjlink/hardware</a></i>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+    
+    <footer class="shadowed">&copy; 2025 Connor J. Link. All Rights Reserved.</footer>
+
+    </body>
+
+</html>

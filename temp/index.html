@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Connor J. Link &mdash; Home</title>
+		<link rel="stylesheet" href="../index.css"/>
+
+		<link rel="stylesheet" href="../common.css"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:image" content="https://connorjlink.com/res/logo.jpg">
+<meta name="description" content="Connor Link. Computer engineering student at Iowa State University. Dubuque, Iowa, United States. Interests incompilers, processor architecture, and graphics.">
+<style>
+	@media (prefers-color-scheme: dark) {
+		html {
+			background: rgb(40, 40, 40);
+		}
+	}
+</style> 
+    </head>
+
+    <body>
+
+		<header class="shadowed hstack">
+    <div class="logo-container">
+        <img src="../res/logo.jpg" alt="logo">
+        <a class="title" id="index-tab" href="./">Connor J. Link</a>
+    </div>
+    <div class="dummy"></div>
+    <button id="navbar-toggle">
+        <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
+            <path stroke="currentColor" stroke-linecap="round" stroke-width="2" d="M5 7h14M5 12h14M5 17h14"/>
+        </svg>
+    </button>
+</header>
+
+		<div id="page">
+
+			<nav class="shadowed">
+    <div class="nav-radio">
+        <input type="radio" name="nav" id="home-radio" onclick="navigate('./');" checked>
+        <label for="home-radio">Home</label>
+    </div>
+    <div class="nav-radio">
+        <input type="radio" name="nav" id="portfolio-radio" onclick="navigate('./portfolio');">
+        <label for="portfolio-radio">Projects</label>
+    </div>
+    <div class="nav-radio">
+        <input type="radio" name="nav" id="experience-radio" onclick="navigate('./experience');">
+        <label for="experience-radio">Experience</label>
+    </div>
+    <div class="nav-radio">
+        <input type="radio" name="nav" id="education-radio" onclick="navigate('./education');">
+        <label for="education-radio">Education</label>
+    </div>
+    <div class="nav-radio">
+        <input type="radio" name="nav" id="contact-radio" onclick="navigate('./contact');">
+        <label for="contact-radio">Contact</label>
+    </div>
+    <div class="nav-radio">
+        <input type="radio" name="nav" id="reflections-radio" onclick="navigate('./reflections');">
+        <label for="reflections-radio">Reflections</label>
+    </div>
+    <div class="nav-radio">
+        <input type="radio" name="nav" id="resume-radio" onclick="navigate('./resume');">
+        <label for="resume-radio">Résumé</label>
+    </div>
+</nav>    
+
+			<article>
+
+				<div class="grid">
+	
+					<div class="subitem shadowed shrink grid-intro">
+						<h2>Introduction</h2>
+		
+						<p>I'm Connor Link, a computer engineer and avid hobbyist programmer. I love low-level technology, where I pursue <a href="/portfolio#haze">compiler development</a>, <a href="/portfolio#cl8">processor design</a>, and <a href="/portfolio#rendering">computer graphics systems</a>.</p>
+						
+						<p>I attend Iowa State University as a Computer Engineering major and anticipate graduating in 2026 with a Bachelor's of Science degree.</p>
+							
+						<p>An inquisitive self-starter, I challenge the status quo and develop comprehensive solutions to the most pressing issues. Through my leadership and project management skills, I drive high-level success by innovation with critical thinking, problem solving, and collaboration.</p>
+					</div>
+	
+					<div class="subitem shadowed grid-mission">
+						<div>
+							<h2>Career Objective</h2>
+							<p class="nudge-up">Seeking senior or staff software design engineer position in compilers or computer graphics development.</p>
+						</div>
+
+						<div class="pad-top">
+							<h2>Mission Statement</h2>
+							<p class="nudge-up"><i>Redefining technological excellence through innovative hardware and software solutions delivered with an exceptional standard of timeliness and quality.</i></p>
+						</div>
+
+						<div class="pad-top">
+							<h2>Contact</h2>
+							<p class="nudge-up"><a href="mailto:connor@connorjlink.com">connor@connorjlink.com</a></p>
+						</div>
+					</div>
+	
+					<img class="headshot grid-image" src="../res/headshot.jpg" alt="headshot">
+	
+				</div>
+	
+				<div class="subitem shadowed pad-top">
+					<h2>Overview</h2>
+	
+					<div class="grid-wrapper">
+						<div class="grid-item one">
+							<h3>Favorite Book</h3>
+							<p><i>Superheavy: Making and Breaking<br> the 	Periodic Table</i> by Kit Chapman</p>
+						</div>
+					
+						<div class="grid-item two">
+							<h3>Favorite Game</h3>
+							<p>Kerbal Space Program</p>
+						</div>
+					
+						<div class="grid-item three">
+							<h3>Favorite Activity</h3>
+							<p>Cycling</p>
+						</div>
+					
+						<div class="grid-item four">
+							<h3>Strengths</h3>
+							<p>Independence, Adaptability, Rigor</p>
+						</div>
+					
+						<div class="grid-item five">
+							<h3>Adjective to Describe Me</h3>
+							<p>Enterprising</p>
+						</div>
+					
+						<div class="grid-item six">
+							<h3>Programming</h3>
+							<p>6 years' experience</p>
+						</div>
+					</div>
+				</div>
+	
+				<div class="subitem shadowed pad-top">
+					<h2>Technical Skills</h2>
+	
+					<div class="subitem shadowed">
+						<h2>Programming Languages</h2>
+						<ul>
+							<li>
+								<h3>General Purpose</h3>
+								<ul class="nudge-up">
+									<li>C++</li>
+									<li>C</li>
+									<li>C#</li>
+									<li>Python</li>
+									<li>Java</li>
+									<li>Rust</li>
+								</ul>
+							</li>
+	
+							<li>
+								<h3>ISA-Specific Assembly</h3>
+								<ul class="nudge-up">
+									<li>x86-64</li>
+									<li>RISC-V</li>
+									<li>ARMv8/9</li>
+								</ul>
+							</li>
+	
+							<li>
+								<h3>Hardware Specification</h3>
+								<ul class="nudge-up">
+									<li>Verilog</li>
+									<li>SystemVerilog</li>
+									<li>VHDL</li>
+								</ul>
+							</li>
+	
+							<li>
+								<h3>Web Development</h3>
+								<ul class="nudge-up">
+									<li>HTML</li>
+									<li>CSS</li>
+									<li>JavaScript</li>
+									<li>TypeScript</li>
+								</ul>
+							</li>
+						</ul>
+					</div>
+	
+					<div class="subitem shadowed halfpad-top">
+						<h2>Software Version Control</h2>
+						<ul>
+							<li>Git</li>
+							<li>GitHub Desktop</li>
+						</ul>
+					</div>
+						
+					<div class="subitem shadowed halfpad-top">
+						<h2>Communication Technologies</h2>
+						<ul>
+							<li>JSONRPC</li>
+							<li>MQTT</li>
+							<li>Protocol Buffers</li>
+							<li>HTTP/WebSockets</li>
+							<li>BLE</li>
+						</ul>
+					</div>
+	
+					<div class="subitem shadowed halfpad-top">
+						<h2>Desktop Application Frameworks</h2>
+						<ul>
+							<li>PyQt</li>
+							<li>ASP.NET/Blazor</li>
+							<li>Windows Presentation Foundation (WPF)</li>
+							<li>Windows App SDK (WinUI 3)</li>
+							<li>Windows API</li>
+							<li>Dear ImGui</li>
+						</ul>
+					</div>
+
+					<div class="subitem shadowed halfpad-top">
+						<h2>Mobile Application Frameworks</h2>
+						<ul>
+							<li>SwiftUI</li>
+							<li>Android Studio</li>
+						</ul>
+					</div>
+	
+				</div>
+	
+			</article>
+
+		</div>
+
+		<footer class="shadowed">&copy; 2025 Connor J. Link. All Rights Reserved.</footer>
+
+    </body>
+
+	<script src="../main.js" type="module"></script>
+
+</html>
