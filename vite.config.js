@@ -53,6 +53,7 @@ function InjectorPlugin() {
 export default defineConfig({
     plugins: [InjectorPlugin()],
     // root: './docs/',
+    base: '/cpre4940/',
     server: {
         watch: {
             ignored: ['!**/temp/**']
